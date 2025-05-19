@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="overflow-hidden">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+        <meta name="color-scheme" content="light">
+
+        <!-- Common CSS -->
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <script type="text/javascript">
+            const systemName = "<%=systemName%>";
+            const version = '<%=version%>';
+            const isSSL = <%=isSSL%>;
+        </script>
+        <script type="module" src="js/home.js"></script>
+        <title><%=systemName%></title>
+    </head>
+
+    <body>
+        <div id="disconnected" class="">Waiting for Connection<img src="../media/loading.svg"></div>
+        <header>
+            <div>These Dam Lochs!</div>
+            <img src="img/logo.svg">
+        </header>
+        <main id="timers"></main>
+        <aside>
+            <header>Global</header>
+            <section data-id="global" class="timer">
+				<button class="globalTimerStart">Start</button>
+				<button class="globalTimerStop">Stop</button>
+				<button class="globalTimerRestart">Reset</button>
+				<button class="globalSafeLock"> Loch </button>
+				<button class="globalSafeUnlock">Unloch</button>
+			</section>
+        </aside>
+    </body>
+
+</html>

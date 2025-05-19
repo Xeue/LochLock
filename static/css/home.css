@@ -1,0 +1,174 @@
+.hidden {
+    display: none !important;
+}
+
+:root {
+  --accent: #8b009f;
+  --bg: #580e62;
+}
+
+body {
+    margin: 0;
+    font-family: Aglet Mono Regular;
+    width: 100%;
+    font-size: 18pt;
+    height: 100%;
+    background: #cecece;
+    display: grid;
+    grid-template-columns: auto auto;
+    text-transform: uppercase;
+  }
+  body > header {
+    padding: 0.5rem 2rem;
+    background-color: var(--bg);
+    color: white;
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1/3;
+  }
+  body > header img {
+    height: 2rem;
+  }
+
+
+
+#timers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gap);
+  padding: var(--gap);
+  --gap: 2rem;
+  
+  &>div{
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  header {
+    background: var(--bg);
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: white;
+  gap: 0.3rem;
+}
+.timerRemaining {
+  grid-column: 1/4;
+  padding: 1rem;
+}
+.timeSlash {
+  margin-inline: 0.2rem;
+  font-size: 1.5rem;
+  color: darkgray;
+}
+.timeStart {
+  font-size: 1.2rem;
+  color: darkgray;
+}
+.timerRemaining,
+.timeStart,
+.timeLeft {
+  font-family: Aglet Mono Regular;
+}
+
+.timerValue {
+  grid-column: 1/3;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  font-size: 0.75em;
+  color: white;
+  padding: 0.5rem;
+  font-family: Aglet Mono Regular;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  /*! font-weight: bold; */
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: red;
+}
+
+input {
+  border: none;
+  font-size: 0.75em;
+   font-family: Aglet Mono Regular;
+   padding: 0.5rem;
+  background: lightgray;
+  margin-left: 0.3rem
+}
+
+.globalSafeLock,
+.safeLock {
+  background-image: url(/img/red.svg);
+  background-repeat: no-repeat;
+  background-size: calc(100% - 3rem);
+  background-position-x: center;
+  background-position-y: 1rem;
+  padding-top: calc(100% - 3rem);
+}
+
+.globalSafeUnlock,
+.safeUnlock {
+  background-image: url(/img/green.svg);
+  background-repeat: no-repeat;
+  background-size: calc(83% - 3rem);
+  background-position-x: center;
+  background-position-y: 1rem;
+  aspect-ratio: 1/1;
+  padding-top: calc(100% - 3rem);
+}
+
+aside {
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  margin-left: 0;
+  margin-right: 2rem;
+}
+aside header {
+  background: var(--bg);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.3rem;
+}
+
+aside .timer {
+  grid-template-columns: 1fr 1fr;
+}
+.globalTimerRestart {
+  grid-column: 1/3;
+}
+
+.timerStart {
+    background: green;
+  }
+  .timerStop {
+    background: darkred;
+  }
+
+  #disconnected {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: #000000c2;
+    font-size: 300%;
+    color: white;
+  }
+  #disconnected img {
+    height: 50vh;
+  }
